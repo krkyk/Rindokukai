@@ -12,7 +12,7 @@ class Dog
   end
 end
 
-@small_dog = Dog.new('ぽち', 'チワワ')
-@small_dog.change_name('はなこ')
+small_dog = Dog.new('ぽち', 'チワワ')
+small_dog.change_name('はなこ')
 
-p @small_dog
+p small_dog
