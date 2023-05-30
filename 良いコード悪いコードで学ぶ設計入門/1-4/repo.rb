@@ -1,4 +1,6 @@
 class Repository
+  attr_accessor :data
+
   def initialize
     @data = []  # データの初期化
   end
@@ -32,6 +34,14 @@ end
 
 class UserRepository < Repository
   def find_by_email(email)
-    @data.find { |user| user.email == email }  # 指定したEmailのユーザーを取得するメソッド
+    all { |user| user.email == email }  # 指定したEmailのユーザーを取得するメソッド
   end
 end
+
+
+user = User.new(1, 'yuki', 'test@example.com')
+
+repo = UserRepository.new
+repo.save(user) 
+
+p repo.find_by_email('test@example.com')
