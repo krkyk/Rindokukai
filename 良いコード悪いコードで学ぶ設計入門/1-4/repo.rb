@@ -34,7 +34,7 @@ end
 
 class UserRepository < Repository
   def find_by_email(email)
-    all { |user| user.email == email }  # 指定したEmailのユーザーを取得するメソッド
+    all { |user| user.email == email }.first # 指定したEmailのユーザーを取得するメソッド
   end
 end
 
@@ -45,3 +45,4 @@ repo = UserRepository.new
 repo.save(user) 
 
 p repo.find_by_email('test@example.com')
+p repo.find(1)
